@@ -1,54 +1,34 @@
-// Better Gut Daily - Landing Page Scripts
+// Five Seasons Windows & Doors - Landing Page Scripts
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Newsletter form handling
-    const newsletterForm = document.querySelector('.newsletter-form');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const emailInput = this.querySelector('.email-input');
-            const email = emailInput.value.trim();
+    // Lead form handling
+    const leadForm = document.getElementById('lead-form');
+    if (leadForm) {
+        leadForm.addEventListener('submit', function(e) {
+            // Form will submit to thankyou.html
+            // Add any validation here if needed
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const project = document.getElementById('project').value;
 
-            if (email && isValidEmail(email)) {
-                // Show success message
-                showNotification('Thanks for subscribing! Check your inbox.', 'success');
-                emailInput.value = '';
-            } else {
+            if (!name || !email || !phone || !project) {
+                e.preventDefault();
+                showNotification('Please fill in all fields.', 'error');
+                return;
+            }
+
+            if (!isValidEmail(email)) {
+                e.preventDefault();
                 showNotification('Please enter a valid email address.', 'error');
+                return;
             }
+
+            // Store form data in sessionStorage for thank you page
+            sessionStorage.setItem('leadName', name);
+            sessionStorage.setItem('leadEmail', email);
         });
     }
-
-    // Search functionality
-    const searchInput = document.querySelector('.search-input');
-    if (searchInput) {
-        searchInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                const query = this.value.trim();
-                if (query) {
-                    showNotification('Search coming soon! Query: ' + query, 'info');
-                }
-            }
-        });
-    }
-
-    // Video card click handling
-    const videoCards = document.querySelectorAll('.video-card');
-    videoCards.forEach(card => {
-        const playButton = card.querySelector('.play-button');
-        const thumbnail = card.querySelector('.video-thumbnail');
-
-        if (playButton && thumbnail) {
-            const handlePlay = function(e) {
-                e.preventDefault();
-                showNotification('Video player coming soon!', 'info');
-            };
-
-            playButton.addEventListener('click', handlePlay);
-            thumbnail.addEventListener('click', handlePlay);
-        }
-    });
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -67,6 +47,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Phone number formatting
+    const phoneInput = document.getElementById('phone');
+    if (phoneInput) {
+        phoneInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 10) {
+                value = value.substring(0, 10);
+                value = `(${value.substring(0, 3)}) ${value.substring(3, 6)}-${value.substring(6)}`;
+            } else if (value.length >= 6) {
+                value = `(${value.substring(0, 3)}) ${value.substring(3, 6)}-${value.substring(6)}`;
+            } else if (value.length >= 3) {
+                value = `(${value.substring(0, 3)}) ${value.substring(3)}`;
+            }
+            e.target.value = value;
+        });
+    }
+
     // Intersection Observer for scroll animations
     const observerOptions = {
         threshold: 0.1,
@@ -83,10 +80,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
 
     // Observe elements for animation
-    document.querySelectorAll('.video-card, .education-content, .newsletter-content').forEach(el => {
+    document.querySelectorAll('.feature-card, .testimonial-card').forEach(el => {
         el.classList.add('animate-on-scroll');
         observer.observe(el);
     });
+
+    // Thank you page personalization
+    const leadName = sessionStorage.getItem('leadName');
+    const thankyouTitle = document.querySelector('.thankyou-hero h1');
+    if (leadName && thankyouTitle) {
+        const firstName = leadName.split(' ')[0];
+        thankyouTitle.textContent = `Thank You, ${firstName}!`;
+    }
 });
 
 // Email validation helper
@@ -121,7 +126,7 @@ function showNotification(message, type = 'info') {
                 top: 20px;
                 right: 20px;
                 padding: 1rem 1.5rem;
-                border-radius: 10px;
+                border-radius: 8px;
                 background: white;
                 box-shadow: 0 4px 20px rgba(0,0,0,0.15);
                 display: flex;
@@ -131,9 +136,9 @@ function showNotification(message, type = 'info') {
                 animation: slideIn 0.3s ease-out;
                 max-width: 400px;
             }
-            .notification-success { border-left: 4px solid #4CAF50; }
-            .notification-error { border-left: 4px solid #f44336; }
-            .notification-info { border-left: 4px solid #2B5BA9; }
+            .notification-success { border-left: 4px solid #28A745; }
+            .notification-error { border-left: 4px solid #DC3545; }
+            .notification-info { border-left: 4px solid #D4A534; }
             .notification-close {
                 background: none;
                 border: none;
