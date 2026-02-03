@@ -510,6 +510,205 @@ h1, h2, h3 {
     font-style: italic;
 }
 
+/* Testimonial Section */
+.testimonial {
+    padding: 4rem 2rem;
+    background: linear-gradient(180deg, #EDF4F8 0%, #E5EEF5 100%);
+}
+
+.testimonial-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.testimonial-icon {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+}
+
+.testimonial-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.testimonial-header-text {
+    flex: 1;
+}
+
+.testimonial-title {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.25rem;
+}
+
+.testimonial-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+}
+
+.testimonial-subtitle strong {
+    font-weight: 600;
+}
+
+.testimonial-card {
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.testimonial-highlight {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2.5rem;
+    background: var(--white);
+}
+
+.testimonial-avatar {
+    flex-shrink: 0;
+}
+
+.testimonial-avatar img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #E8F0F8;
+}
+
+.testimonial-quotes {
+    flex: 1;
+}
+
+.quote-text {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.quote-highlight {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #2B5BA9 0%, #3B7DD8 50%, #6BC96F 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.quote-italic {
+    font-size: 1rem;
+    color: var(--text-gray);
+    font-style: italic;
+}
+
+.quote-italic em {
+    font-style: italic;
+    color: var(--text-dark);
+}
+
+.read-full-review {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 1rem;
+    background: var(--white);
+    border: none;
+    border-top: 1px solid #E8EEF4;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.read-full-review:hover {
+    background: #F8FBFE;
+}
+
+.read-full-review .chevron {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.read-full-review.active .chevron {
+    transform: rotate(180deg);
+}
+
+.full-review {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    background: #F8FBFE;
+}
+
+.full-review.expanded {
+    max-height: 2000px;
+}
+
+.review-content {
+    padding: 2rem 2.5rem;
+}
+
+.reviewer-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.25rem;
+}
+
+.reviewer-title {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+    margin-bottom: 1.5rem;
+}
+
+.review-text {
+    color: var(--text-dark);
+    line-height: 1.75;
+}
+
+.review-text p {
+    margin-bottom: 1.25rem;
+}
+
+.review-text p:last-child {
+    margin-bottom: 0;
+}
+
+.review-attribution {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.review-verified {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
 /* Footer */
 .footer {
     padding: 2rem;
@@ -578,6 +777,26 @@ h1, h2, h3 {
     .newsletter-bg-right {
         width: 20%;
         opacity: 0.5;
+    }
+
+    .testimonial-highlight {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+        padding: 2rem 1.5rem;
+    }
+
+    .testimonial-avatar img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .quote-highlight {
+        font-size: 1.15rem;
+    }
+
+    .review-content {
+        padding: 1.5rem;
     }
 }
 
