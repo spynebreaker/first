@@ -1,25 +1,96 @@
-// Five Seasons Windows - FAQ Section Scripts
+// Five Seasons Windows - Testimonial Slider Scripts
 
 document.addEventListener('DOMContentLoaded', function() {
-    const faqItems = document.querySelectorAll('.faq-item');
+    const track = document.querySelector('.slider-track');
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const prevBtn = document.querySelector('.slider-btn-prev');
+    const nextBtn = document.querySelector('.slider-btn-next');
+    const dotsContainer = document.querySelector('.slider-dots');
 
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
+    let currentIndex = 0;
+    const totalSlides = slides.length;
 
-        question.addEventListener('click', function() {
-            const isActive = item.classList.contains('active');
-
-            // Close all other items (optional - remove this block for multiple open)
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item) {
-                    otherItem.classList.remove('active');
-                    otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-                }
-            });
-
-            // Toggle current item
-            item.classList.toggle('active');
-            this.setAttribute('aria-expanded', !isActive);
-        });
+    // Create dots
+    slides.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.classList.add('slider-dot');
+        if (index === 0) dot.classList.add('active');
+        dot.setAttribute('aria-label', `Go to testimonial ${index + 1}`);
+        dot.addEventListener('click', () => goToSlide(index));
+        dotsContainer.appendChild(dot);
     });
+
+    const dots = document.querySelectorAll('.slider-dot');
+
+    function updateSlider() {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        // Update dots
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+
+        // Update button states
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex === totalSlides - 1;
+    }
+
+    function goToSlide(index) {
+        currentIndex = index;
+        updateSlider();
+    }
+
+    function nextSlide() {
+        if (currentIndex < totalSlides - 1) {
+            currentIndex++;
+            updateSlider();
+        }
+    }
+
+    function prevSlide() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateSlider();
+        }
+    }
+
+    // Event listeners
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            prevSlide();
+        } else if (e.key === 'ArrowRight') {
+            nextSlide();
+        }
+    });
+
+    // Touch/swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    track.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    track.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+
+        if (diff > swipeThreshold) {
+            nextSlide();
+        } else if (diff < -swipeThreshold) {
+            prevSlide();
+        }
+    }
+
+    // Initialize
+    updateSlider();
 });

@@ -6,13 +6,14 @@
 }
 
 :root {
-    --bg-dark: #3D4852;
-    --bg-darker: #2F3940;
-    --accent-yellow: #D4E157;
-    --accent-yellow-hover: #E6EE9C;
-    --text-white: #ffffff;
-    --text-light: rgba(255, 255, 255, 0.85);
-    --border-yellow: #C5D93D;
+    --bg-light: #E6EBF4;
+    --primary-navy: #1E3A5F;
+    --text-dark: #2C3E50;
+    --text-gray: #5A6A7A;
+    --text-light: #8A9AAA;
+    --white: #ffffff;
+    --accent-blue: #3B7DD8;
+    --shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
 html {
@@ -21,171 +22,300 @@ html {
 
 body {
     font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    color: var(--text-white);
+    color: var(--text-dark);
     line-height: 1.6;
-    background-color: var(--bg-dark);
+    background-color: var(--bg-light);
 }
 
-/* FAQ Section */
-.faq {
+/* Testimonials Section */
+.testimonials {
     padding: 5rem 2rem;
-    background-color: var(--bg-dark);
+    background-color: var(--bg-light);
     min-height: 100vh;
-}
-
-.faq-container {
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.faq-title {
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--text-white);
-    margin-bottom: 3rem;
-    letter-spacing: -0.5px;
-}
-
-.faq-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
-}
-
-.faq-item {
-    border: 2px solid var(--border-yellow);
-    border-radius: 8px;
-    overflow: hidden;
-    transition: border-color 0.2s ease;
-}
-
-.faq-item:hover {
-    border-color: var(--accent-yellow-hover);
-}
-
-.faq-question {
-    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    padding: 1.25rem 1.5rem;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    text-align: left;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.05rem;
-    font-weight: 500;
-    color: var(--accent-yellow);
-    transition: background-color 0.2s ease;
 }
 
-.faq-question:hover {
-    background-color: rgba(212, 225, 87, 0.08);
+.testimonials-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
 }
 
-.faq-question span:first-child {
-    flex: 1;
-    line-height: 1.4;
+.testimonials-header {
+    text-align: center;
+    margin-bottom: 3rem;
 }
 
-.faq-icon {
+.testimonials-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-navy);
+    margin-bottom: 0.75rem;
+}
+
+.testimonials-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    font-weight: 400;
+}
+
+/* Slider */
+.slider-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
     position: relative;
-    width: 24px;
-    height: 24px;
+}
+
+.slider-container {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.testimonial-slide {
+    min-width: 100%;
+    padding: 0 1rem;
+}
+
+.testimonial-content {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 3rem;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: flex-start;
+    gap: 2.5rem;
+}
+
+.testimonial-image {
     flex-shrink: 0;
 }
 
-.faq-icon::before,
-.faq-icon::after {
-    content: '';
-    position: absolute;
-    background-color: var(--accent-yellow);
-    transition: transform 0.3s ease;
+.testimonial-image img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--bg-light);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.faq-icon::before {
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    transform: translateY(-50%);
+.testimonial-text {
+    flex: 1;
 }
 
-.faq-icon::after {
-    top: 0;
-    left: 50%;
-    width: 3px;
-    height: 100%;
-    transform: translateX(-50%);
+.quote-icon {
+    color: var(--accent-blue);
+    opacity: 0.3;
+    margin-bottom: 1rem;
 }
 
-.faq-item.active .faq-icon::after {
-    transform: translateX(-50%) rotate(90deg);
+.quote-icon svg {
+    width: 40px;
+    height: 40px;
 }
 
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
+.testimonial-quote {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    font-weight: 400;
 }
 
-.faq-item.active .faq-answer {
-    max-height: 300px;
+.testimonial-author {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-navy);
 }
 
-.faq-answer p {
-    padding: 0 1.5rem 1.5rem;
-    color: var(--text-light);
-    font-size: 0.95rem;
-    line-height: 1.7;
+/* Slider Buttons */
+.slider-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-navy);
+    background: var(--white);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.slider-btn:hover {
+    background: var(--primary-navy);
+    color: var(--white);
+}
+
+.slider-btn:hover svg {
+    stroke: var(--white);
+}
+
+.slider-btn svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--primary-navy);
+    transition: stroke 0.2s ease;
+}
+
+.slider-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.slider-btn:disabled:hover {
+    background: var(--white);
+}
+
+.slider-btn:disabled:hover svg {
+    stroke: var(--primary-navy);
+}
+
+/* Slider Dots */
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
+
+.slider-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-navy);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+}
+
+.slider-dot:hover {
+    background: rgba(30, 58, 95, 0.3);
+}
+
+.slider-dot.active {
+    background: var(--primary-navy);
 }
 
 /* Responsive Design */
+@media (max-width: 900px) {
+    .testimonial-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 2.5rem 2rem;
+        gap: 1.5rem;
+    }
+
+    .testimonial-image img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .quote-icon {
+        display: flex;
+        justify-content: center;
+    }
+}
+
 @media (max-width: 768px) {
-    .faq {
+    .testimonials {
         padding: 3rem 1rem;
     }
 
-    .faq-title {
+    .testimonials-title {
         font-size: 2rem;
-        margin-bottom: 2rem;
     }
 
-    .faq-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .faq-question {
-        padding: 1rem 1.25rem;
+    .testimonials-subtitle {
         font-size: 1rem;
     }
 
-    .faq-answer p {
-        padding: 0 1.25rem 1.25rem;
-        font-size: 0.9rem;
+    .slider-wrapper {
+        gap: 0.75rem;
+    }
+
+    .slider-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .slider-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .testimonial-slide {
+        padding: 0 0.5rem;
+    }
+
+    .testimonial-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .testimonial-quote {
+        font-size: 1rem;
+    }
+
+    .quote-icon svg {
+        width: 32px;
+        height: 32px;
     }
 }
 
 @media (max-width: 480px) {
-    .faq {
-        padding: 2rem 1rem;
+    .testimonials {
+        padding: 2rem 0.5rem;
     }
 
-    .faq-title {
+    .testimonials-header {
+        margin-bottom: 2rem;
+    }
+
+    .testimonials-title {
         font-size: 1.75rem;
     }
 
-    .faq-question {
-        padding: 1rem;
-        font-size: 0.95rem;
+    .slider-btn {
+        width: 36px;
+        height: 36px;
     }
 
-    .faq-icon {
-        width: 20px;
-        height: 20px;
+    .slider-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .testimonial-content {
+        padding: 1.5rem 1rem;
+    }
+
+    .testimonial-image img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .testimonial-quote {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .slider-dots {
+        gap: 0.5rem;
+    }
+
+    .slider-dot {
+        width: 10px;
+        height: 10px;
     }
 }
