@@ -1,15 +1,10 @@
 :root {
-  --blue-900: #2b4f8f;
-  --blue-700: #3f76ca;
-  --green-600: #6a8f3a;
-  --green-500: #79a546;
-  --cream: #f7f9fc;
-  --mist: #ecf2f7;
-  --text-dark: #273244;
-  --text-mid: #5e6c7c;
-  --text-light: #8795a5;
-  --white: #fff;
-  --shadow: 0 16px 32px rgba(30, 48, 80, 0.15);
+  --navy: #0c223b;
+  --navy-80: rgba(12, 34, 59, 0.8);
+  --navy-60: rgba(12, 34, 59, 0.6);
+  --white: #ffffff;
+  --glass: rgba(255, 255, 255, 0.2);
+  --shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
 }
 
 * {
@@ -19,297 +14,165 @@
 }
 
 body {
-  font-family: "Nunito", sans-serif;
-  background: var(--white);
-  color: var(--text-dark);
-  line-height: 1.6;
-}
-
-h1, h2, h3 {
-  font-weight: 800;
+  font-family: "Montserrat", sans-serif;
+  background: #f4f6f8;
+  color: var(--white);
 }
 
 .page {
-  background: var(--cream);
+  padding: 2rem;
 }
 
-.hero {
-  padding: 3.5rem 1.5rem 2.5rem;
-}
-
-.hero-frame {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 2.8rem 2.5rem 2.5rem;
-  border-radius: 26px;
-  background: url("https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1600&q=80") left/32% no-repeat,
-    url("https://images.unsplash.com/photo-1540420773420-3366772f4999?w=1600&q=80") right/32% no-repeat,
-    var(--mist);
-  box-shadow: var(--shadow);
-}
-
-.hero-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.logo svg {
-  width: 66px;
-  height: 68px;
-}
-
-.brand-name {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: var(--blue-900);
-}
-
-.brand-tag {
-  font-size: 0.85rem;
-  color: var(--text-light);
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-}
-
-.trust {
-  background: var(--white);
-  padding: 0.4rem 0.9rem;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  color: var(--text-mid);
-  box-shadow: 0 6px 18px rgba(34, 55, 86, 0.08);
-}
-
-.hero-content {
-  text-align: center;
-  max-width: 680px;
-  margin: 0 auto 2.5rem;
-}
-
-.hero-content h1 {
-  font-size: 2.4rem;
-  color: var(--blue-900);
-  margin-bottom: 1rem;
-}
-
-.hero-subtitle {
-  color: var(--text-mid);
-  margin-bottom: 1.8rem;
-}
-
-.email-form {
-  display: flex;
-  justify-content: center;
-  gap: 0.8rem;
-  flex-wrap: wrap;
-  margin-bottom: 1.5rem;
-}
-
-.email-form input {
-  min-width: 240px;
-  padding: 0.9rem 1.2rem;
-  border-radius: 999px;
-  border: 1px solid #d6e0ea;
-  background: var(--white);
-  font-size: 1rem;
-  outline: none;
-}
-
-.email-form button {
-  padding: 0.9rem 1.8rem;
-  border-radius: 999px;
-  border: none;
-  background: var(--green-600);
-  color: var(--white);
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.benefits {
-  list-style: none;
+.gallery {
   display: grid;
-  gap: 0.6rem;
-  color: var(--text-mid);
-  text-align: left;
-  max-width: 520px;
-  margin: 0 auto;
-}
-
-.benefits li::before {
-  content: "✓";
-  color: var(--green-500);
-  margin-right: 0.6rem;
-  font-weight: 700;
-}
-
-.hero-bottom {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.9fr);
   gap: 1.5rem;
   align-items: stretch;
 }
 
-.product-row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1rem;
-  background: var(--white);
-  padding: 1.4rem;
-  border-radius: 18px;
-  box-shadow: 0 10px 24px rgba(31, 49, 80, 0.12);
-}
-
-.bottle {
-  text-align: center;
-  font-size: 0.85rem;
-  color: var(--text-mid);
-}
-
-.bottle img {
-  width: 100%;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 0.5rem;
-}
-
-.deal-card,
-.testimonial {
-  background: var(--white);
-  padding: 1.6rem;
-  border-radius: 18px;
-  box-shadow: 0 10px 24px rgba(31, 49, 80, 0.12);
-}
-
-.deal-card h3 {
-  color: var(--blue-900);
-  margin-bottom: 0.8rem;
-}
-
-.deal-card ul {
-  list-style: none;
-  display: grid;
-  gap: 0.6rem;
-  color: var(--text-mid);
-}
-
-.deal-card li::before {
-  content: "✓";
-  color: var(--green-500);
-  margin-right: 0.5rem;
-  font-weight: 700;
-}
-
-.testimonial {
+.gallery-hero {
+  background: linear-gradient(var(--navy-60), var(--navy-60)),
+    url("https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=1600&q=80") center/cover no-repeat;
+  border-radius: 22px;
+  min-height: 520px;
   display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  color: var(--text-mid);
-}
-
-.testimonial span {
-  font-weight: 700;
-  color: var(--blue-900);
-}
-
-.cta {
-  padding: 3.5rem 1.5rem 4.5rem;
-  background: var(--cream);
-}
-
-.cta-card {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-  background: var(--white);
-  border-radius: 24px;
-  padding: 2.8rem;
+  align-items: center;
+  padding: 3.5rem;
   box-shadow: var(--shadow);
 }
 
-.cta-card h2 {
-  color: var(--blue-900);
-  font-size: 2rem;
-  margin-bottom: 0.6rem;
+.hero-content {
+  max-width: 520px;
 }
 
-.cta-card p {
-  color: var(--text-mid);
-  margin-bottom: 1.4rem;
+.hero-eyebrow {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
 }
 
-.cta-button {
-  background: var(--green-600);
+.hero-content h1 {
+  font-size: 2.1rem;
+  line-height: 1.4;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.hero-subtext {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.hero-button {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: var(--glass);
   color: var(--white);
-  border: none;
-  border-radius: 999px;
   padding: 0.9rem 2.2rem;
+  border-radius: 12px;
   font-size: 1rem;
   font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
   cursor: pointer;
+  backdrop-filter: blur(6px);
 }
 
-.variant .hero-frame {
-  background: url("https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1600&q=80") left/32% no-repeat,
-    url("https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=1600&q=80") right/32% no-repeat,
-    var(--mist);
+.hero-button.ghost {
+  background: transparent;
 }
 
-.variant-cta {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(233, 242, 250, 0.9));
-}
-
-.value-grid {
-  display: grid;
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  text-align: left;
-  margin-top: 1.6rem;
+  margin-bottom: 2rem;
 }
 
-.value-grid h3 {
-  font-size: 1rem;
-  color: var(--blue-900);
-  margin-bottom: 0.3rem;
+.hero-stats {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
 }
 
-.value-grid p {
-  color: var(--text-mid);
-  font-size: 0.95rem;
+.hero-stats strong {
+  font-size: 1.3rem;
+  display: block;
+  margin-bottom: 0.2rem;
 }
 
-.microcopy {
-  margin-top: 1rem;
-  color: var(--text-light);
-  font-size: 0.85rem;
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 1.3rem;
 }
 
-@media (max-width: 900px) {
-  .hero-frame {
-    background-size: 0, 0, cover;
+.gallery-card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  min-height: 220px;
+  box-shadow: var(--shadow);
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent 55%, rgba(0, 0, 0, 0.6));
+}
+
+.gallery-label {
+  position: absolute;
+  left: 1.2rem;
+  bottom: 1rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.variant .gallery-hero {
+  background: linear-gradient(var(--navy-80), var(--navy-80)),
+    url("https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1600&q=80") center/cover no-repeat;
+}
+
+@media (max-width: 1100px) {
+  .gallery {
+    grid-template-columns: 1fr;
   }
 
-  .hero-top {
-    justify-content: center;
+  .gallery-hero {
+    min-height: 420px;
   }
 }
 
 @media (max-width: 640px) {
-  .hero-content h1 {
-    font-size: 2rem;
+  .page {
+    padding: 1.2rem;
   }
 
-  .cta-card {
-    padding: 2rem;
+  .gallery-hero {
+    padding: 2.2rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.7rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
   }
 }
