@@ -1,23 +1,25 @@
-// Five Seasons Windows - Testimonial Section Scripts
+// Five Seasons Windows - FAQ Section Scripts
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Testimonial review toggle
-    const toggleReviewBtn = document.getElementById('toggleReview');
-    const fullReview = document.getElementById('fullReview');
+    const faqItems = document.querySelectorAll('.faq-item');
 
-    if (toggleReviewBtn && fullReview) {
-        toggleReviewBtn.addEventListener('click', function() {
-            const isExpanded = fullReview.classList.contains('expanded');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
 
-            if (isExpanded) {
-                fullReview.classList.remove('expanded');
-                toggleReviewBtn.classList.remove('active');
-                toggleReviewBtn.querySelector('span').textContent = 'Read Full Review';
-            } else {
-                fullReview.classList.add('expanded');
-                toggleReviewBtn.classList.add('active');
-                toggleReviewBtn.querySelector('span').textContent = 'Hide Full Review';
-            }
+        question.addEventListener('click', function() {
+            const isActive = item.classList.contains('active');
+
+            // Close all other items (optional - remove this block for multiple open)
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Toggle current item
+            item.classList.toggle('active');
+            this.setAttribute('aria-expanded', !isActive);
         });
-    }
+    });
 });
