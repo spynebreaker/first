@@ -1,174 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Better Gut Daily - Wellness & Balance</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Better Gut Daily</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Hero Section -->
+  <main>
     <section class="hero">
-        <div class="hero-bg-left"></div>
-        <div class="hero-bg-right"></div>
-        <div class="hero-content">
-            <div class="logo">
-                <svg viewBox="0 0 80 90" class="logo-icon">
-                    <defs>
-                        <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#3B7DD8"/>
-                            <stop offset="100%" style="stop-color:#2B5BA9"/>
-                        </linearGradient>
-                    </defs>
-                    <!-- Leaf -->
-                    <path d="M40 5 Q45 15 40 25 Q35 15 40 5" fill="#4CAF50"/>
-                    <path d="M40 15 L40 25" stroke="#4CAF50" stroke-width="2" fill="none"/>
-                    <!-- Heart shape -->
-                    <path d="M40 85 C10 55 10 35 25 25 C35 18 40 25 40 35 C40 25 45 18 55 25 C70 35 70 55 40 85" fill="url(#heartGradient)"/>
-                    <!-- Gut/intestine design inside heart -->
-                    <path d="M30 45 Q35 42 40 45 Q45 48 50 45" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
-                    <path d="M32 55 Q37 58 42 55 Q47 52 52 55" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
-                    <path d="M35 65 Q40 68 45 65" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
-                </svg>
+      <div class="hero-frame">
+        <div class="hero-panel">
+          <div class="brand">
+            <div class="brand-mark">
+              <svg viewBox="0 0 88 90" aria-hidden="true">
+                <defs>
+                  <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#3b7cd6" />
+                    <stop offset="100%" stop-color="#2b5aa6" />
+                  </linearGradient>
+                </defs>
+                <path d="M44 6 C46 14 42 20 38 28" fill="#5da93d" />
+                <path d="M44 80 C18 56 18 36 32 26 C40 20 44 26 44 36 C44 26 48 20 56 26 C70 36 70 56 44 80" fill="url(#brandGrad)"/>
+                <path d="M34 44 Q42 40 50 44" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" />
+                <path d="M34 56 Q42 60 50 56" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" />
+                <path d="M38 66 Q44 70 50 66" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" />
+              </svg>
             </div>
-            <h1 class="brand-name">BETTER <span>GUT</span> DAILY</h1>
-            <p class="tagline">W E L L N E S S  &  B A L A N C E</p>
-            <p class="hero-description">
-                Simple, science-backed tips to improve digestion,<br>
-                reduce stress, boost energy and support everyday well-being.
-            </p>
-            <a href="#newsletter" class="btn btn-primary">Join Now <span class="arrow">›</span></a>
-            <a href="#videos" class="watch-link">Watch Latest Videos ›</a>
+            <div>
+              <p class="brand-title">BETTER <span>GUT</span> DAILY</p>
+              <p class="brand-subtitle">WELLNESS &amp; BALANCE</p>
+            </div>
+          </div>
+
+          <h1>Simple, science-backed support for a calmer gut.</h1>
+          <p class="hero-copy">
+            Explore bite-sized guidance to improve digestion, reduce stress, and boost everyday energy. Tailored routines, nutrition insights, and gentle habit shifts delivered weekly.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#join">Join Now <span>›</span></a>
+            <a class="btn btn-ghost" href="#videos">Watch Latest Videos</a>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Education Section -->
     <section class="education">
-        <div class="education-bg-left"></div>
-        <div class="education-bg-right"></div>
-        <div class="education-content">
-            <h2 class="section-title"><em>Better Education. Healthier Gut.</em></h2>
-            <ul class="benefits-list">
-                <li>
-                    <span class="icon icon-video">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <polygon points="10,8 16,12 10,16" fill="currentColor"/>
-                        </svg>
-                    </span>
-                    Watch science-backed videos on topics that matter
-                </li>
-                <li>
-                    <span class="icon icon-supplement">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <ellipse cx="12" cy="12" rx="8" ry="4" transform="rotate(45 12 12)"/>
-                        </svg>
-                    </span>
-                    Learn about popular <strong>supplements</strong> in simple terms
-                </li>
-                <li>
-                    <span class="icon icon-habits">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M20 6L9 17l-5-5"/>
-                        </svg>
-                    </span>
-                    Discover tiny habits that add up to a better daily balance
-                </li>
-            </ul>
-            <div class="search-container">
-                <span class="search-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="11" cy="11" r="8"/>
-                        <path d="M21 21l-4.35-4.35"/>
-                    </svg>
-                </span>
-                <input type="text" placeholder="Search our wellness channel..." class="search-input">
-            </div>
-            <a href="#videos" class="btn btn-secondary">See All Videos <span class="arrow">›</span></a>
+      <div class="section-card">
+        <h2>Better Education. Healthier Gut.</h2>
+        <div class="education-grid">
+          <div class="education-item">
+            <span class="icon">🎥</span>
+            <p>Watch science-backed videos on topics that matter.</p>
+          </div>
+          <div class="education-item">
+            <span class="icon">💊</span>
+            <p>Learn about popular <strong>supplements</strong> in simple terms.</p>
+          </div>
+          <div class="education-item">
+            <span class="icon">🌿</span>
+            <p>Discover tiny habits that build everyday balance.</p>
+          </div>
         </div>
+        <div class="search">
+          <span>🔍</span>
+          <input type="text" placeholder="Search our wellness channel..." />
+        </div>
+        <a class="btn btn-secondary" href="#videos">See All Videos <span>›</span></a>
+      </div>
     </section>
 
-    <!-- Latest Videos Section -->
     <section class="videos" id="videos">
-        <h2 class="section-title"><em>Our Latest Videos</em></h2>
-        <div class="video-grid">
-            <div class="video-card">
-                <div class="video-thumbnail">
-                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=250&fit=crop" alt="Goli Gummies Review">
-                    <div class="play-button">
-                        <svg viewBox="0 0 24 24" fill="white">
-                            <polygon points="8,5 19,12 8,19"/>
-                        </svg>
-                    </div>
-                </div>
-                <div class="video-info">
-                    <span class="video-date">April 22, 2024</span>
-                    <h3 class="video-title">Goli Zero Sugar Gummies Review <em>(Updated)</em></h3>
-                    <p class="video-description">Realize a retufigmars babis necesities, abroaialing tinee of your bedy.</p>
-                    <a href="#" class="btn btn-watch"><span class="play-icon">▶</span> Watch Video</a>
-                </div>
-            </div>
-            <div class="video-card">
-                <div class="video-thumbnail">
-                    <img src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=400&h=250&fit=crop" alt="Ashwagandha Benefits">
-                    <div class="play-button">
-                        <svg viewBox="0 0 24 24" fill="white">
-                            <polygon points="8,5 19,12 8,19"/>
-                        </svg>
-                    </div>
-                </div>
-                <div class="video-info">
-                    <span class="video-date">April 19, 2024</span>
-                    <h3 class="video-title">What Exactly Does Ashwagandha Do?</h3>
-                    <p class="video-description">Reowr porates, pluh energy to caftectine, thurmaling rases with uttp pro...</p>
-                    <a href="#" class="btn btn-watch"><span class="play-icon">▶</span> Watch Video</a>
-                </div>
-            </div>
-            <div class="video-card">
-                <div class="video-thumbnail">
-                    <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=250&fit=crop" alt="Gut Health Supplements">
-                    <div class="play-button">
-                        <svg viewBox="0 0 24 24" fill="white">
-                            <polygon points="8,5 19,12 8,19"/>
-                        </svg>
-                    </div>
-                </div>
-                <div class="video-info">
-                    <span class="video-date">April 19, 2024</span>
-                    <h3 class="video-title">Top 6 Supplements for Gut Health</h3>
-                    <p class="video-description">Provere ingredien's bind ene marting efeerges and saak up, properties.</p>
-                    <a href="#" class="btn btn-watch"><span class="play-icon">▶</span> Watch Video</a>
-                </div>
-            </div>
-        </div>
+      <h2>Our Latest Videos</h2>
+      <div class="video-grid">
+        <article class="video-card">
+          <div class="video-thumb">
+            <img src="https://images.unsplash.com/photo-1543362906-acfc16c67564?w=700&q=80" alt="Supplement gummies" />
+            <span class="play">▶</span>
+          </div>
+          <div class="video-body">
+            <p class="date">April 22, 2024</p>
+            <h3>Goli Zero Sugar Gummies Review <em>(Updated)</em></h3>
+            <p>What to look for in sugar-free supplements and who benefits most.</p>
+            <button class="btn btn-watch">Watch Video</button>
+          </div>
+        </article>
+        <article class="video-card">
+          <div class="video-thumb">
+            <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=700&q=80" alt="Ashwagandha powder" />
+            <span class="play">▶</span>
+          </div>
+          <div class="video-body">
+            <p class="date">April 19, 2024</p>
+            <h3>What Exactly Does Ashwagandha Do?</h3>
+            <p>Learn how adaptogens may support stress resilience and sleep.</p>
+            <button class="btn btn-watch">Watch Video</button>
+          </div>
+        </article>
+        <article class="video-card">
+          <div class="video-thumb">
+            <img src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=700&q=80" alt="Supplements lineup" />
+            <span class="play">▶</span>
+          </div>
+          <div class="video-body">
+            <p class="date">April 19, 2024</p>
+            <h3>Top 6 Supplements for Gut Health</h3>
+            <p>Our expert picks for daily gut support with practical tips.</p>
+            <button class="btn btn-watch">Watch Video</button>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <!-- Newsletter Section -->
-    <section class="newsletter" id="newsletter">
-        <div class="newsletter-bg-left"></div>
-        <div class="newsletter-bg-right"></div>
-        <div class="newsletter-content">
-            <h2 class="newsletter-title"><em>Free Weekly Wellness Tips</em></h2>
-            <p class="newsletter-description">
-                Join 4,500+ members. No fluff, no spam. Just clear, science-backed ideas to help the you<br>
-                feel better daily. Enjoy the first 7 days free. <span class="leaf-icon">🌿</span>
-            </p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Email address" class="email-input" required>
-                <button type="submit" class="btn btn-primary">Join Now for Free <span class="arrow">›</span></button>
-            </form>
-            <p class="disclaimer">*Yes you can totally cancel anytime if it's not right for you.</p>
-        </div>
+    <section class="newsletter" id="join">
+      <div class="section-card">
+        <h2>Free Weekly Wellness Tips</h2>
+        <p>Join 4,500+ members. No fluff, no spam. Just clear, science-backed ideas to help you feel better daily. Enjoy the first 7 days free. 🌱</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Email address" required />
+          <button class="btn btn-primary" type="submit">Join Now for Free <span>›</span></button>
+        </form>
+        <small>*Cancel anytime if it’s not right for you.</small>
+      </div>
     </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2024 Better Gut Daily. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
+  </main>
 </body>
 </html>
